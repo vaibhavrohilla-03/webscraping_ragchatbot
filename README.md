@@ -1,6 +1,6 @@
 
 # Student RAGBOT
-This project is a Retrieval Augmented Generation (RAG) application designed to answer questions based on information scraped from a university website. It uses a vector database to store website content and a Large Language Model (LLM) to generate answers. The application is built with Python, Langchain, Streamlit, and uses Google Generative AI for embeddings and chat functionalities.
+This project is a Retrieval Augmented Generation (RAG) application designed to answer questions based on information scraped from lets say a university website or any website. It uses a vector database to store website content and a Large Language Model (LLM) to generate answers. The application is built with Python, Langchain, Streamlit, and uses Google Generative AI for embeddings and chat functionalities.
 
 ## Setup Instructions
 
