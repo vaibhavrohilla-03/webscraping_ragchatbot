@@ -1,0 +1,23 @@
+[project]
+name = "student-ragbot"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Your Name",email = "you@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "requests (>=2.32.0,<3.0.0)",
+    "streamlit (>=1.35.0,<2.0.0)",
+    "langchain (>=0.2.0,<0.3.0)",
+    "langchain-google-genai (>=1.0.0,<2.0.0)",
+    "onnxruntime (>=1.18.0,<1.19.0)",
+    "langchain-chroma (>=0.1.0,<0.2.0)",
+    "beautifulsoup4 (>=4.12.0,<5.0.0)",
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
