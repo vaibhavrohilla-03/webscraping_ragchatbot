@@ -22,7 +22,7 @@ You can set up and run this project either locally using Poetry or via Docker.
 3.  **Build the Docker Image:**
     From the project root directory (where the `Dockerfile` is located):
     ```bash
-    docker build -t webscraping_ragchatbot 
+    docker build -t webscraping_ragchatbot .
     ```
 
 4.  **Run the Docker Container:**
