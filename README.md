@@ -10,9 +10,7 @@ You can set up and run this project either locally using Poetry or via Docker.
 
 1.  **Clone the Repository:**
     ```bash
-    git clone <your_repository_url>
-    cd student-ragbot
-    ```
+    git clone https://github.com/vaibhavrohilla-03/webscraping_ragchatbot.git
 
 2.  **Create `.env` File:**
     Create a file named `.env` in the root directory of the project and add your Google API key:
