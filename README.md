@@ -1,34 +1,45 @@
-
-# Webscraping RAGBOT
-This project is a Retrieval Augmented Generation (RAG) application designed to answer questions based on information scraped from lets say a university website or any website. It uses a vector database to store website content and a Large Language Model (LLM) to generate answers. The application is built with Python, Langchain, Streamlit, and uses Google Generative AI for embeddings and chat functionalities.
-
 ## Setup Instructions
 
-You can set up and run this project either locally using Poetry or via Docker.
+### Prerequisites
 
-### Setup
+* Python 3.10 or higher
+* Poetry (Python dependency management tool)
+* A Google API Key with access to the Generative Language API (Gemini models).
+
+### Steps
 
 1.  **Clone the Repository:**
     ```bash
     git clone https://github.com/vaibhavrohilla-03/webscraping_ragchatbot.git
+    cd webscraping_ragchatbot
+    ```
 
-2.  **Create `.env` File:**
+2.  **Install Poetry:**
+    If you don't have Poetry installed, follow the instructions on the [official Poetry website](https://python-poetry.org/docs/#installation).
+
+3.  **Create `.env` File:**
     Create a file named `.env` in the root directory of the project and add your Google API key:
     ```env
     GOOGLE_API_KEY="your_actual_google_api_key_here"
     ```
-    This file will be used by the `docker run` command.
+    This file will be used by the application to access Google AI services.
 
-3.  **Build the Docker Image:**
-    From the project root directory (where the `Dockerfile` is located):
+4.  **Install Dependencies:**
+    Navigate to the project root and let Poetry install the dependencies from pyproject.toml or poetry.lock
     ```bash
-    docker build -t webscraping_ragchatbot .
+    poetry install --only main
     ```
 
-4.  **Run the Docker Container:**
+5.  **Run the Chatbot Application:**
+    Once the knowledge base has been successfully prepared, you can run the chatbot:
+    ```bash
+    poetry run streamlit run app/chatbot.py
+    ```
+    
+6.  **Prepare the Knowledge Base:**
+    In the Streamlit interface that opens:
+    * Enter the website URL you want to process.
+    * Click the "Prepare Knowledge Base" button.
+    This process will scrape the website, split the content, create embeddings, and store them in a ChromaDB vector database within the `Data/` directory.
 
-    * **To run the Chatbot application (default):**
-        To persist the `Data` directory (containing `scraped_data.jsonl` and `chroma_db`) on your host machine, create a `Data` folder in your project root if it doesn't exist, and then run:
-        ```bash
-        # docker run -p 8501:8501 --env-file .env -v "%cd%/Data:/app/Data" webscraping_ragchatbot
-        ```
+### I have included a dockerfile too to run this locally
